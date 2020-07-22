@@ -8,14 +8,16 @@
   </head>
   <body>
     <div id="app">
-      <p>{{ items[0].name }}: {{ items[0].price }} * {{ items[0].quantity }}</p>
-      <p>{{ items[1].name }}: {{ items[1].price }} * {{ items[1].quantity }}</p>
-      <p>{{ items[2].name }}: {{ items[2].price }} * {{ items[2].quantity }}</p>
-      <p>小計: {{ totalPrice | numberWithDelimiter }}円</p>
-      <p>合計(税込み): {{ totalPriceWithTax | numberWithDelimiter }}円</p>
-      <p v-show="!canBuy">
-        {{ 1000 | numberWithDelimiter }}円以上からご購入いただけます    
-      </p>
+      <div :style="errorMessageStyle">
+        <p>{{ items[0].name }}: {{ items[0].price }} * {{ items[0].quantity }}</p>
+        <p>{{ items[1].name }}: {{ items[1].price }} * {{ items[1].quantity }}</p>
+        <p>{{ items[2].name }}: {{ items[2].price }} * {{ items[2].quantity }}</p>
+        <p>小計: {{ totalPrice | numberWithDelimiter }}円</p>
+        <p>合計(税込み): {{ totalPriceWithTax | numberWithDelimiter }}円</p>
+        <p v-show="!canBuy">
+          {{ 1000 | numberWithDelimiter }}円以上からご購入いただけます    
+        </p>
+      </div>
     </div>
     <script>
       var items = [
@@ -59,6 +61,12 @@
           },
           canBuy: function () {
             return this.totalPrice >= 1000
+          },
+          errorMessageStyle: function () {
+            return {
+              border: this.canBuy ? '' : '1px solid red',
+              color: this.canBuy ? '' : 'red'
+            }
           }
         }
       })
