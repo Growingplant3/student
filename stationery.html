@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>文房具</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ items[1].name }}</p>
+    </div>
+    <script>
+      var items = [
+        {
+          name: '鉛筆',
+          price: 300,
+          quantity: 0
+        },
+        {
+          name: 'ノート',
+          price: 400,
+          quantity: 0
+        },
+        {
+          name: '消しゴム',
+          price: 300,
+          quantity: 0
+        }
+      ]
+
+      var vm = new Vue ({
+        el: '#app',
+        data: {
+          items: items
+        }
+      })
+      window.vm = vm
+    </script>
+  </body>
+</html>

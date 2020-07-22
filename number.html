@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ items[0].name }}: {{ items[0].price }} * {{ items[0].quantity }}</p>
+      <p>フィルタ処理例 {{10000000000 | numberWithDelimiter }}</p>
+    </div>
+    <script>
+      var items = [
+      {
+        name: '鉛筆',
+        price: 300,
+        quantity: 0
+      },
+      {
+        name: 'ノート',
+        price: 400,
+        quantity: 0
+      },
+      {
+        name: '消しゴム',
+        price: 500,
+        quantity: 0
+      }
+      ]
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          items: items
+        },
+        filters: {
+          numberWithDelimiter: function (value) {
+            if (!value) {
+              return '0'
+            }
+            return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
