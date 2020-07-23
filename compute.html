@@ -27,6 +27,7 @@
         <p v-show="!canBuy">
           {{ 1000 | numberWithDelimiter }}円以上からご購入いただけます    
         </p>
+        <button v-bind:disabled="!canBuy" v-on:click="doBuy">購入</button>
       </div>
     </div>
     <script>
@@ -58,6 +59,14 @@
               return '0'
             }
             return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+          }
+        },
+        methods: {
+          doBuy: function () {
+            alert(this.totalPriceWithTax + '円のお買い上げ！')
+            this.items.forEach(function (item) {
+              item.quantity = 0
+            })
           }
         },
         computed: {
