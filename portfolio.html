@@ -3,10 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>ポートフォリオサイト</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <script type="text/javascript" src="portfolio.js"></script>
+    <div id="fruits-list">
+      <page-header>
+        <h1 slot="header">制作物</h1>
+      </page-header>
+      <ul>
+        <li>Javascriptで作った投稿機能</li>
+        <li>Javascriptで作った神経衰弱</li>
+        <li>Rubyで作ったカードゲーム</li>
+        <li>Railsで作ったお薬手帳アプリ</li>
+      </ul>
+    </div>
+    <script>
+      var headerTemplate = `
+        <div style="color: blue;">
+          <slot name="header">初期設定文字</slot>
+        </div>
+      `
+
+      Vue.component('page-header', {
+        template: headerTemplate
+      })
+
+      new Vue({
+        el: "#fruits-list"
+      })
+    </script>
   </body>
 </html>
