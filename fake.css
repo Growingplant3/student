@@ -1,0 +1,23 @@
+.header h1{
+  width: 50%;
+  height: 30px;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  padding: 30px 15px;
+  margin-bottom: 0px;
+}
+
+.content ul {
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.content li {
+  width: 50%;
+  height: 30px;
+  padding: 30px 15px;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  text-align: left;
+  list-style: none;
+}
