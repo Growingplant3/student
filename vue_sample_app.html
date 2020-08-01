@@ -8,5 +8,16 @@
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   </head>
   <body>
+    <div id="app">
+      <nav>
+        <router-link to="/top">トップページ</router-link>
+        <router-link to="/users">ユーザー一覧ページ</router-link>
+      </nav>
+      <router-view></router-view>
+    </div>
+    <script type="text/x-template" id="user-list"></script>
+    <script>
+      
+    </script>
   </body>
 </html>
