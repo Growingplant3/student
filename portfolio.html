@@ -3,36 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオサイト</title>
+    <title>下田佳紀のポートフォリオサイト</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="contents-list">
-      <page-header>
-        <h1 slot="header">制作物</h1>
-      </page-header>
-      <ul>
-        <li>コンテンツ一覧</li>
-        <li>Javascriptで作った投稿機能</li>
-        <li>Javascriptで作った神経衰弱</li>
-        <li>Rubyで作ったカードゲーム</li>
-        <li>Railsで作ったお薬手帳アプリ</li>
-      </ul>
-    </div>
-    <script>
-      var headerTemplate = `
-        <div style="color: blue;">
-          <slot name="header">初期設定文字</slot>
-        </div>
-      `
-
-      Vue.component('page-header', {
-        template: headerTemplate
-      })
-
-      new Vue({
-        el: "#contents-list"
-      })
-    </script>
+    <h3>ナビバー置き場</h3>
+    <a>写真置き場</a>
+    <ul>
+      <div>
+        <p>自己紹介</p>
+        <li>写真</li>
+        <li>紹介文</li>
+        <li>twitterのリンク</li>
+        <li>githubのリンク</li>
+      </div>
+      <div>
+        <p>Javascriptで作った投稿機能</p>
+        <li>機能についての説明①</li>
+        <li>機能についての説明②</li>
+        <li>機能についての説明③</li>
+      </div>
+      <div>
+        <ul>Javascriptで作った神経衰弱</ul>
+      </div>
+      <ul>Rubyで作ったカードゲーム</ul>
+      <ul>Railsで作ったお薬手帳アプリ</ul>
+    </ul>
   </body>
 </html>
